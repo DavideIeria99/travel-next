@@ -6,19 +6,19 @@ generator client {
 }
 
 datasource db {
-  provider  = "postgresql"
-  url       = env("POSTGRES_URL") // uses connection pooling
+  provider = "postgresql"
+  url      = env("POSTGRES_URL") // uses connection pooling
   // directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
-  schemas   = ["auth", "public"]
+  schemas  = ["auth", "public"]
 }
 
 model City {
-  id          Int      @id @default(autoincrement())
+  id          Int       @id @default(autoincrement())
   name        String
   description String
   image       String
-  area        Decimal     @db.Decimal()
-  population  Int    
+  area        Decimal   @db.Decimal()
+  population  Int
   year        Int
   altitude    Int
   Article     Article[]
@@ -28,9 +28,9 @@ model City {
 
 model Article {
   id          Int    @id @default(autoincrement())
-  city_id     Int     
+  city_id     Int
   city        City   @relation(fields: [city_id], references: [id])
-  title        String @db.VarChar(256)
+  title       String @db.VarChar(256)
   description String
 
   @@schema("public")

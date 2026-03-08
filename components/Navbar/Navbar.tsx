@@ -16,7 +16,7 @@ export default function Navbar() {
 		},
 		{
 			id: 3,
-			name: "About",
+			name: "Contattaci",
 			href: "/about",
 		},
 	];

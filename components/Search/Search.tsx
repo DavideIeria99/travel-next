@@ -24,7 +24,7 @@ export default function Search() {
 			/>
 			<Button
 				type="submit"
-				label="search"
+				label="cerca"
 			/>
 		</form>
 	);
